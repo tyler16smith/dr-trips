@@ -5,6 +5,8 @@ import eggshell_left from './assets/eggshell_left.png';
 import eggshell_right from './assets/eggshell_right.png';
 import healthcare_worker from './assets/healthcare_worker.png';
 import healthcare from './assets/healthcare.png';
+import scott from './assets/scott.jpg';
+import eric from './assets/eric.jpg';
 
 export default function App() {
 
@@ -26,7 +28,17 @@ export default function App() {
   return (
     <div>
 
-      <div id="top" className='lg:flex lg:justify-center bg-light-gray -mt-4'>
+      {/* Nav bar */}
+      <div id="top" className='flex justify-between tracking-wide lg:px-32 py-5 text-2xl'>
+        <a href="#top">Home</a>
+        <div className='flex justify-center gap-10'>
+          <a href="#services">Services</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div className='lg:flex lg:justify-center bg-light-gray'>
         <div className='flex justify-center items-center' style={styles.container}>
           <div>
             <div className='flex justify-center tracking-tight font-landingSans'>
@@ -44,33 +56,58 @@ export default function App() {
         </div>
       </div>
 
-      <div className='mb-32 mx-5'>
-        <div className='lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80 mb-16'>
-          <div className='lg:flex lg:justify-center mb-5'>
-            <img src={healthcare} alt="healthcare data" className='h-80 rounded-lg' />
+      <div className='py-32 bg-light-gray' id='services'>
+        <div className='mx-5'>
+          <p className='flex justify-center text-5xl tracking-tighter font-extrabold'>Our Services</p>
+          <div className='mt-24 lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80 mb-16'>
+            <div className='lg:flex lg:justify-center mb-5'>
+              <img src={healthcare} alt="healthcare data" className='h-80 rounded-lg' />
+            </div>
+            <div className='my-3'>
+              <p className='text-4xl tracking-tighter font-extrabold'>For Businesses</p>
+              <p className='text-2xl text-dark-gray mt-5 w-96'>Leverage our data in your negotiations to help make better decisions.</p>
+            </div>
           </div>
-          <div className='my-3'>
-            <p className='text-4xl tracking-tighter font-extrabold'>For Businesses</p>
-            <p className='text-2xl text-dark-gray mt-5 w-96'>Leverage our data in your negotiations to help make better decisions.</p>
-          </div>
-        </div>
-        <div className='lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80'>
-          <div className='my-3'>
-            <p className='text-4xl tracking-tighter font-extrabold'>For Consumers</p>
-            <p className='text-2xl text-dark-gray mt-5 w-96'>Know what the price should be <b>before</b> spending thousands of dollars.</p>
-          </div>
-          <div className='lg:flex lg:justify-center mb-5'>
-            <img src={healthcare_worker} alt="healthcare worker" className='rounded-lg h-80' />
+          <div className='lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80'>
+            <div className='my-3'>
+              <p className='text-4xl tracking-tighter font-extrabold'>For Consumers</p>
+              <p className='text-2xl text-dark-gray mt-5 w-96'>Know what the price should be <b>before</b> spending thousands of dollars.</p>
+            </div>
+            <div className='lg:flex lg:justify-center mb-5'>
+              <img src={healthcare_worker} alt="healthcare worker" className='rounded-lg h-80' />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className='lg:p-5' id="contact">
+      <div className='my-24' id='team'>
+        <p className='flex justify-center text-5xl tracking-tighter font-extrabold'>Meet the Team</p>
+        <div className='lg:flex justify-center gap-32 mt-16 mx-5'>
+          <div>
+            <div className='flex justify-center mt-5'>
+              <img src={scott} alt="scott peterson" className='rounded-lg h-80' />
+            </div>
+            <div className='flex justify-center'>
+              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Dr. Scott Peterson is the greatest thing since sliced bread. More hyping up Dr. Peterson here.</p>
+            </div>
+          </div>
+          <div>
+            <div className='flex justify-center mt-5'>
+              <img src={eric} alt="eric smith" className='rounded-lg h-80' />
+            </div>
+            <div className='flex justify-center'>
+              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Eric Smith is also the greatest thing since sliced bread. More hyping up Eric. A. Smith here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='lg:p-5 mt-16 bg-light-gray' id="contact">
         <div className='flex justify-center lg:mb-16 mx-2'>
           <div className='lg:m-5 px-5 py-5 bg-light-gray lg:w-1/2 rounded-xl'>
-            <form className='text-centerpx-12 py-5' onSubmit={sendEmail}>
-              <p className='flex justify-center text-4xl font-extrabold'>Contact our team</p>
-              <div className='lg:flex lg:justify-center mt-5 mx-2'>
+            <form className='text-center p-5' onSubmit={sendEmail}>
+              <p className='flex justify-center text-5xl font-extrabold tracking-tighter'>Contact us</p>
+              <div className='lg:flex lg:justify-center mt-12 mx-2'>
                 <input placeholder='First Name' type="text" name="first_name" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:w-1/3 lg:mr-3 md:mr-3' />
                 <input placeholder='Last Name' type="text" name="last_name" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:w-1/3 lg:mr-3 md:mr-3' />
               </div>
@@ -117,7 +154,7 @@ export default function App() {
           </div>
         </div>
         <div className='flex justify-center mx-5 pb-2 text-gray'>
-          <p>© 2022 InvestorBot, LLC. All rights reserved.</p>
+          <p>© 2022 Eggshell, LLC. All rights reserved.</p>
         </div>
       </div>
 
