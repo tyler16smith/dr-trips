@@ -11,7 +11,7 @@ import eric from './assets/eric.jpg';
 export default function App() {
 
   function sendEmail(e) {
-    console.log("Send email via EmailJS")
+    console.log("Send email via EmailJS");
   }
 
   const styles = {
@@ -23,7 +23,7 @@ export default function App() {
         width: '100vw',
         height: '100vh',
     }
-};
+  };
 
   return (
     <div>
@@ -88,7 +88,7 @@ export default function App() {
               <img src={scott} alt="scott peterson" className='rounded-lg h-80' />
             </div>
             <div className='flex justify-center'>
-              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Dr. Scott Peterson is the greatest thing since sliced bread. More hyping up Dr. Peterson here.</p>
+              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Scott Peterson is whole grain wheat.</p>
             </div>
           </div>
           <div>
