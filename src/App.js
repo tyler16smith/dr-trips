@@ -1,14 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import eggshell from './assets/eggshell.png';
-import eggshell_left from './assets/eggshell_left.png';
-import eggshell_right from './assets/eggshell_right.png';
-import healthcare_worker from './assets/healthcare_worker.png';
-import healthcare from './assets/healthcare.png';
-import scott from './assets/scott.jpg';
-import eric from './assets/eric.jpg';
+import dr from './assets/dr.jpg';
 
 export default function App() {
+
+  const [scroll, setScroll] = useState(false);
 
   function sendEmail(e) {
     console.log("Send email via EmailJS");
@@ -16,7 +12,7 @@ export default function App() {
 
   const styles = {
     container: {
-        backgroundImage: `url(${eggshell})`,
+        backgroundImage: `url(${dr})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -25,56 +21,65 @@ export default function App() {
     }
   };
 
+
   return (
-    <div>
+    <div onScroll={() => setScroll(true)}>
 
       {/* Nav bar */}
-      <div id="top" className='flex justify-between tracking-wide lg:px-32 py-5 text-2xl'>
-        <a href="#top">Home</a>
-        <div className='flex justify-center gap-10'>
-          <a href="#services">Services</a>
-          <a href="#team">Team</a>
-          <a href="#contact">Contact</a>
+      <div style={styles.container}>
+        <div id="top" className={(scroll) ? 'tracking-wide pt-8 text-xl' : 'tracking-wide pt-8 text-xl'} style={{width: '100vw'}}>
+          <div className='flex justify-around mb-5 text-white'>
+            <a href="#top">Home</a>
+            <div className='flex justify-center gap-5'>
+              <a href="#about" className='py-2 px-5 rounded-md hover:bg-gray'>About</a>
+              <a href="#team" className='py-2 px-5 rounded-md hover:bg-gray'>Apply</a>
+              <a href="#contact" className='py-2 px-5 rounded-md hover:bg-gray'>Contact</a>
+            </div>
+          </div>
+          {/* <hr className={(scroll) ? 'border-2 border' : 'hidden'} style={{width: '100vw'}} /> */}
         </div>
-      </div>
 
-      <div className='lg:flex lg:justify-center bg-light-gray'>
-        <div className='flex justify-center items-center' style={styles.container}>
-          <div>
-            <div className='flex justify-center tracking-tight font-landingSans'>
-              <p className='text-7xl font-black text-center leading-tight tracking-tighter'>We're <span className='text-bot-blue'>cracking open </span><br/>healthcare data</p>
-            </div>
-            <div className='flex justify-center mt-4'>
-              <p className='lg:w-7/12 lg:my-8 place-self-center text-2xl mx-3 text-center'>We're opening the curtains to get you easily-accessible, transparent healthcare data.</p>
-            </div>
-            <div className='flex justify-center mt-5'>
-              <a href='#contact'>
-                <Button className='mx-2 lg:text-xl rounded-lg px-8 py-4 bg-bot-blue hover:bg-dark-bot-blue' style={{color: 'white'}}>Contact Today</Button>
-              </a>
+        <div className='lg:flex lg:justify-center text-white' style={{height: '90vh'}}>
+          <div className='flex justify-center items-center'>
+            <div>
+              <div className='flex justify-center tracking-tight font-landingSans'>
+                <div className='text-7xl font-black text-center leading-tight tracking-tighter'>
+                  <p>Making an impact in</p>
+                  <p className='rounded-xl px-5 mt-2 bg-bot-blue'>3rd world education</p>
+                </div>
+              </div>
+              <div className='flex justify-center mt-4'>
+                <p className='lg:w-1/2 lg:my-8 place-self-center text-2xl mx-3 text-center'>We're helping 300+ students in the Dominican Republic get an education <span className='underline'>and you can help us</span>.</p>
+              </div>
+              <div className='flex justify-center mt-5'>
+                <a href='#about'>
+                  <Button className='mx-2 lg:text-xl rounded-lg px-8 py-4 bg-bot-blue hover:bg-dark-bot-blue' style={{color: 'white'}}>Read more</Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className='py-32 bg-light-gray' id='services'>
+      <div className='py-32 bg-light-gray' id='about'>
         <div className='mx-5'>
-          <p className='flex justify-center text-5xl tracking-tighter font-extrabold'>Our Services</p>
+          <p className='flex justify-center text-5xl tracking-tighter font-extrabold'>About us</p>
           <div className='mt-24 lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80 mb-16'>
             <div className='lg:flex lg:justify-center mb-5'>
-              <img src={healthcare} alt="healthcare data" className='h-80 rounded-lg' />
+              <img src={dr} alt="healthcare data" className='h-80 rounded-lg' />
             </div>
             <div className='my-3'>
-              <p className='text-4xl tracking-tighter font-extrabold'>For Businesses</p>
-              <p className='text-2xl text-dark-gray mt-5 w-96'>Leverage our data in your negotiations to help make better decisions.</p>
+              <p className='text-4xl tracking-tighter font-extrabold'>Our Mission</p>
+              <p className='text-2xl text-dark-gray mt-5 w-96'>We hope to increase the teach the rising generation proper cirriculum by supplementing their education with cirriculum in health, spanish, english, math, science, music, and computers.</p>
             </div>
           </div>
           <div className='lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80'>
             <div className='my-3'>
-              <p className='text-4xl tracking-tighter font-extrabold'>For Consumers</p>
-              <p className='text-2xl text-dark-gray mt-5 w-96'>Know what the price should be <b>before</b> spending thousands of dollars.</p>
+              <p className='text-4xl tracking-tighter font-extrabold'>Our Story</p>
+              <p className='text-2xl text-dark-gray mt-5 w-96'>Four years ago, we bought a complex in the center of the slums.</p>
             </div>
             <div className='lg:flex lg:justify-center mb-5'>
-              <img src={healthcare_worker} alt="healthcare worker" className='rounded-lg h-80' />
+              <img src={dr} alt="healthcare worker" className='rounded-lg h-80' />
             </div>
           </div>
         </div>
@@ -85,18 +90,10 @@ export default function App() {
         <div className='lg:flex justify-center gap-32 mt-16 mx-5'>
           <div>
             <div className='flex justify-center mt-5'>
-              <img src={scott} alt="scott peterson" className='rounded-lg h-80' />
+              <img src={dr} alt="scott peterson" className='rounded-lg h-80' />
             </div>
             <div className='flex justify-center'>
-              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Scott Peterson is whole grain wheat.</p>
-            </div>
-          </div>
-          <div>
-            <div className='flex justify-center mt-5'>
-              <img src={eric} alt="eric smith" className='rounded-lg h-80' />
-            </div>
-            <div className='flex justify-center'>
-              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Eric Smith is also the greatest thing since sliced bread. More hyping up Eric. A. Smith here.</p>
+              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Introduction here.</p>
             </div>
           </div>
         </div>
@@ -138,23 +135,24 @@ export default function App() {
       <div className='text-center lg:mx-96'>
         <div className='lg:flex lg:justify-around pt-16 pb-12'>
           <div className='flex justify-center mb-5'>
-            <img src={eggshell_left} alt="logo" className='h-32 rounded-lg' />
           </div>
           <div className='text-gray my-10'>
-            <p className='font-bold mb-3'>Quick Links</p>
+            <p className='font-bold mb-3 text-lg'>Quick Links</p>
             <a href='#top' className='hover:text-bot-blue hover:no-underline'>
-              <p className='mb-3'>Home</p>
+              <p className='mb-3'>About</p>
+            </a>
+            <a href='#top' className='hover:text-bot-blue hover:no-underline'>
+              <p className='mb-3'>Apply</p>
             </a>
             <a href='#contact' className='hover:text-bot-blue hover:no-underline'>
               <p className='mb-3'>Contact</p>
             </a>
           </div>
           <div className='flex justify-center mb-5'>
-            <img src={eggshell_right} alt="logo" className='h-32 rounded-lg' />
           </div>
         </div>
         <div className='flex justify-center mx-5 pb-2 text-gray'>
-          <p>© 2022 Eggshell, LLC. All rights reserved.</p>
+          <p>© 2022 DR Trips. All rights reserved.</p>
         </div>
       </div>
 
