@@ -1,158 +1,148 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
-import dr from './assets/dr.jpg';
+import React, { useEffect, useState } from 'react';
+import dr_og from './assets/dr_og.jpg';
 
-export default function App() {
+export default function AgentLandingPage() {
 
-  const [scroll, setScroll] = useState(false);
-
-  function sendEmail(e) {
-    console.log("Send email via EmailJS");
+  const [width, setWidth] = useState(window.innerWidth);
+  function handleWindowSizeChange() {
+      setWidth(window.innerWidth);
   }
-
-  const styles = {
-    container: {
-        backgroundImage: `url(${dr})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh',
-    }
-  };
+  useEffect(() => {
+      window.addEventListener('resize', handleWindowSizeChange);
+      return () => {
+          window.removeEventListener('resize', handleWindowSizeChange);
+      }
+  }, []);
+  const isMobile = width <= 768;
 
 
   return (
-    <div onScroll={() => setScroll(true)}>
+    <div>
 
-      {/* Nav bar */}
-      <div style={styles.container}>
-        <div id="top" className={(scroll) ? 'tracking-wide pt-8 text-xl' : 'tracking-wide pt-8 text-xl'} style={{width: '100vw'}}>
-          <div className='flex justify-around mb-5 text-white'>
-            <a href="#top">Home</a>
-            <div className='flex justify-center gap-5'>
-              <a href="#about" className='py-2 px-5 rounded-md hover:bg-gray'>About</a>
-              <a href="#team" className='py-2 px-5 rounded-md hover:bg-gray'>Apply</a>
-              <a href="#contact" className='py-2 px-5 rounded-md hover:bg-gray'>Contact</a>
-            </div>
+      <div
+        className='-mt-4 pb-32'
+        // style={{
+        //   backgroundImage: `url(${map_bg})`,
+        //   backgroundPosition: 'center',
+        //   backgroundSize: 'cover'
+        // }}
+      >
+        <div className='bg-light-gray py-5'>
+          <div className='flex justify-between items-center lg:mx-16 mx-3 pt-8 mb-4'>
+            <p className='text-3xl font-extrabold tracking-tight'>🌴DR Trips</p>
+            <a href="https://notionforms.io/forms/agents-beta-signup" target="__blank" className='flex justify-center hover:no-underline'>
+              <button style={{borderWidth: '1px'}} className='px-5 py-3 text-xl text-bot-blue bg-light-bot-blue-0 hover:bg-light-bot-blue font-semibold rounded-xl'>Sign up</button>
+            </a>
           </div>
-          {/* <hr className={(scroll) ? 'border-2 border' : 'hidden'} style={{width: '100vw'}} /> */}
-        </div>
+          <hr className='border-light-gray-4' />
 
-        <div className='lg:flex lg:justify-center text-white' style={{height: '90vh'}}>
           <div className='flex justify-center items-center'>
-            <div>
-              <div className='flex justify-center tracking-tight font-landingSans'>
-                <div className='text-7xl font-black text-center leading-tight tracking-tighter'>
-                  <p>Making an impact in</p>
-                  <p className='rounded-xl px-5 mt-2 bg-bot-blue'>3rd world education</p>
-                </div>
+            <div className={`lg:pt-32 pt-28 pb-16 mx-3 ${isMobile ? 'w-header' : 'w-[700px]'}`}>  
+              <div>
+                <p className={`font-black text-center tracking-tighter leading-tight lg:mx-5 ${isMobile ? 'text-5xl' : 'text-6xl'}`}><span className='text-bot-blue'>Be</span> the change</p>
               </div>
-              <div className='flex justify-center mt-4'>
-                <p className='lg:w-1/2 lg:my-8 place-self-center text-2xl mx-3 text-center'>We're helping 300+ students in the Dominican Republic get an education <span className='underline'>and you can help us</span>.</p>
+              <div className='flex justify-center mb-5 lg:mx-5'>
+                <p className='lg:text-2xl text-xl mt-6 text-center lg:leading-10 leading-8'>We're helping 300+ students in the Dominican Republic get an education <span className='font-semibold'>and you can help us</span>.</p>
               </div>
-              <div className='flex justify-center mt-5'>
-                <a href='#about'>
-                  <Button className='mx-2 lg:text-xl rounded-lg px-8 py-4 bg-bot-blue hover:bg-dark-bot-blue' style={{color: 'white'}}>Read more</Button>
-                </a>
-              </div>
+              <a href="https://notionforms.io/forms/agents-beta-signup" target="__blank" className='flex justify-center mt-10 my-4 hover:no-underline'>
+                <button className='px-10 py-4 text-xl bg-bot-blue hover:bg-dark-bot-blue text-white font-semibold rounded-xl'>Volunteer form</button>
+              </a>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className='py-32 bg-light-gray' id='about'>
-        <div className='mx-5'>
-          <p className='flex justify-center text-5xl tracking-tighter font-extrabold'>About us</p>
-          <div className='mt-24 lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80 mb-16'>
-            <div className='lg:flex lg:justify-center mb-5'>
-              <img src={dr} alt="healthcare data" className='h-80 rounded-lg' />
-            </div>
-            <div className='my-3'>
-              <p className='text-4xl tracking-tighter font-extrabold'>Our Mission</p>
-              <p className='text-2xl text-dark-gray mt-5 w-96'>We hope to increase the teach the rising generation proper cirriculum by supplementing their education with cirriculum in health, spanish, english, math, science, music, and computers.</p>
-            </div>
-          </div>
-          <div className='lg:flex lg:justify-center lg:items-center lg:gap-24 lg:h-80'>
-            <div className='my-3'>
-              <p className='text-4xl tracking-tighter font-extrabold'>Our Story</p>
-              <p className='text-2xl text-dark-gray mt-5 w-96'>Four years ago, we bought a complex in the center of the slums.</p>
-            </div>
-            <div className='lg:flex lg:justify-center mb-5'>
-              <img src={dr} alt="healthcare worker" className='rounded-lg h-80' />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className='my-24' id='team'>
-        <p className='flex justify-center text-5xl tracking-tighter font-extrabold'>Meet the Team</p>
-        <div className='lg:flex justify-center gap-32 mt-16 mx-5'>
-          <div>
-            <div className='flex justify-center mt-5'>
-              <img src={dr} alt="scott peterson" className='rounded-lg h-80' />
-            </div>
+          <div className='py-3 mx-2'>
             <div className='flex justify-center'>
-              <p className='text-2xl text-dark-gray text-center mt-5' style={{width: '500px'}}>Introduction here.</p>
+              <iframe style={{ width: '1000px', height: isMobile ? '300px' : '500px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/fLFw1Jjp01I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
+
+        <div className='flex justify-center items-center'>
+          <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 lg:py-32 pt-28 mx-3'>
+            <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
+              <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Our <span className='text-bot-blue'>Mission</span></p>
+              <p className='text-xl mt-4'>Teach the rising generation proper cirriculum by supplementing their education in health, spanish, english, math, science, music, and computers.</p>
+            </div>
+            <div className={isMobile ? 'my-5' : ''}>
+              <img src={dr_og} alt="stop_switching" className='rounded-xl' style={{width: isMobile ? '100%' : '600px'}} />
+            </div>
+          </div>
+        </div>
+        
+        <div className='flex justify-center gap-10'>
+          <img src={dr_og} alt="stop_switching" className={isMobile ? 'hidden' : 'rounded-xl'} style={{width: isMobile ? '100%' : '600px'}} />
+          <div className='flex justify-start items-center'>
+            <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 lg:py-32 pt-20 mx-3'>
+              <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
+                <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Trip <span className='text-bot-blue'>Details</span></p>
+                <p className='text-xl mt-4'>Trip details go here...</p>
+              </div>
+              <img src={dr_og} alt="stop_switching" className={isMobile ? 'rounded-xl mt-5' : 'hidden'} style={{width: isMobile ? '100%' : '600px'}} />
+            </div>
+          </div>
+        </div>
+
+        <div id="how-it-works" className='pt-24 lg:pb-44 pb-24'>
+          <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight ${isMobile ? 'mt-5 mb-16' : 'mb-32'}`}>What will I be doing?</p>
+          <div className={isMobile ? 'mx-5' : ''}>
+            <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
+              <div>
+                <div className='flex justify-start items-center gap-4'>
+                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-bot-blue font-extrabold'>01</p>
+                  <p
+                    style={{width: '200px'}}
+                    className='bg-light-bot-blue-0 py-2 mt-2 text-bot-blue font-bold lg:text-3xl text-2xl rounded-xl text-center shadow-md shadow-light-gray-3'
+                  >
+                    Build cirriculum
+                  </p>
+                </div>
+                <p className='ml-2 text-xl mt-3 lg:w-96 leading-8'>Build cirriculum in areas like health, science, math, music, english, spanish, business, and technology.</p>
+              </div>
+            </div>
+            <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
+              <div>
+              <div className='flex justify-start items-center gap-4'>
+                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-bot-blue font-extrabold'>02</p>
+                  <p
+                    style={{width: '200px'}}
+                    className='bg-light-bot-blue-0 py-2 mt-2 text-bot-blue font-bold lg:text-3xl text-2xl rounded-xl text-center shadow-md shadow-light-gray-3'
+                  >
+                    Teach students
+                  </p>
+                </div>
+                <p className='ml-2 text-xl mt-3 lg:w-96 leading-8'>Help teach students throughout your stay in the DR</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div className='lg:p-5 mt-16 bg-light-gray' id="contact">
-        <div className='flex justify-center lg:mb-16 mx-2'>
-          <div className='lg:m-5 px-5 py-5 bg-light-gray lg:w-1/2 rounded-xl'>
-            <form className='text-center p-5' onSubmit={sendEmail}>
-              <p className='flex justify-center text-5xl font-extrabold tracking-tighter'>Contact us</p>
-              <div className='lg:flex lg:justify-center mt-12 mx-2'>
-                <input placeholder='First Name' type="text" name="first_name" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:w-1/3 lg:mr-3 md:mr-3' />
-                <input placeholder='Last Name' type="text" name="last_name" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:w-1/3 lg:mr-3 md:mr-3' />
-              </div>
-              <div className='lg:flex lg:justify-center mx-2'>
-                <input placeholder='Phone' type="phone" name="phone" className='h-14 -px-1 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:w-1/3 lg:mr-3 md:mr-3' />
-                <input placeholder='Email' type="email" name="email" className='h-14 -px-1 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:w-1/3 lg:mr-3 md:mr-3' />
-              </div>
-              <div className='lg:flex lg:justify-center'>
-                <textarea placeholder='Message' type="text" name="message" className='h-24 pt-2 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:w-2/3 lg:mr-3 md:mr-3' />
-              </div>
-              <div className='lg:flex lg:justify-center mt-5'>
-                <Button
-                  type='submit'
-                  variant='primary-secondary'
-                  className='bg-bot-blue text-xl hover:bg-dark-bot-blue mt-3 h-14 w-64 rounded-md px-3 lg:mr-3 py-2'
-                  style={{color: 'white'}}
-                >
-                    Submit
-                </Button>
-              </div>
-            </form>
+      <div className={`flex justify-center items-center pb-16 bg-light-gray ${isMobile ? 'px-3' : ''}`} id="beta">
+        <div className='px-4 py-5 -mt-20 bg-light-bot-blue-0 lg:w-8/12 rounded-xl shadow shadow-light-gray-3'>
+          <div className='lg:flex lg:justify-between lg:mr-12'>
+            <div className={isMobile ? '' : 'ml-3'}>
+              <p className='lg:text-4xl text-3xl text-black tracking-tight font-extrabold mb-2 text-center-mobile'>Join the crew</p>
+              <p className='font-gray text-xl text-center-mobile'>Help us develop cirriculum, teach students, and build the program.</p>
+            </div>
+            <a href="https://notionforms.io/forms/agents-beta-signup" target="__blank" className='flex justify-center hover:no-underline'>
+              <button
+                style={{width: isMobile ? '100%' : ''}}
+                className={`px-5 py-3 text-xl text-white bg-bot-blue hover:bg-dark-bot-blue font-semibold rounded-xl ${isMobile ? 'mt-4 -mb-2' : ''}`}
+              >
+                Sign up
+              </button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <hr className='border-gray' />
-      <div className='text-center lg:mx-96'>
-        <div className='lg:flex lg:justify-around pt-16 pb-12'>
-          <div className='flex justify-center mb-5'>
-          </div>
-          <div className='text-gray my-10'>
-            <p className='font-bold mb-3 text-lg'>Quick Links</p>
-            <a href='#top' className='hover:text-bot-blue hover:no-underline'>
-              <p className='mb-3'>About</p>
-            </a>
-            <a href='#top' className='hover:text-bot-blue hover:no-underline'>
-              <p className='mb-3'>Apply</p>
-            </a>
-            <a href='#contact' className='hover:text-bot-blue hover:no-underline'>
-              <p className='mb-3'>Contact</p>
-            </a>
-          </div>
-          <div className='flex justify-center mb-5'>
-          </div>
-        </div>
-        <div className='flex justify-center mx-5 pb-2 text-gray'>
-          <p>© 2022 DR Trips. All rights reserved.</p>
+      <hr className='border-light-gray-4' />
+      <div className='flex flex-col justify-center items-center text-center my-20'>
+        <p className='text-3xl font-extrabold tracking-tight -ml-4'>🌴DR Trips</p>
+        <div className='flex justify-center mx-2 pb-3 text-light-gray-4 mt-3'>
+          <p>© 2023 DR Trips. All rights reserved.</p>
         </div>
       </div>
 
