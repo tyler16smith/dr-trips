@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import dr_og from './assets/dr_og.jpg';
+import emailjs from 'emailjs-com';
 
 export default function AgentLandingPage() {
 
+  const notifyMessageSent = (msg) => toast.success(<p>{msg}</p>, {
+    toastId: 'messageSent',
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "colored",
+  });
+  
   const [width, setWidth] = useState(window.innerWidth);
   function handleWindowSizeChange() {
       setWidth(window.innerWidth);
@@ -15,10 +29,17 @@ export default function AgentLandingPage() {
   }, []);
   const isMobile = width <= 768;
 
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_yj69lqb", 'dr_website', e.target, "JN_JwlFXMsr9Xk_-9")
+    notifyMessageSent("Message sent successfully.");
+  }
+
 
   return (
     <div>
-
+      <ToastContainer />
       <div
         className='-mt-4 pb-32'
         // style={{
@@ -121,8 +142,27 @@ export default function AgentLandingPage() {
           <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight ${isMobile ? 'mt-5 mb-16' : 'mb-32'}`}>FAQ</p>
         </div>
         
-        <div id="how-it-works" className='py-24'>
-          <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight ${isMobile ? 'mt-5 mb-16' : 'mb-32'}`}>Contact form here</p>
+        <div id="how-it-works" className='py-24 flex justify-center items-center'>
+            <form className='text-center p-5' onSubmit={sendEmail}>
+              <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight`}>Contact us</p>
+              <div className='lg:flex lg:justify-center mt-8 mx-2'>
+                  <input placeholder='Name' name="name" type="text" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3' style={{width: isMobile ? '100%' : '300px'}} />
+                  <input placeholder='Email' type="text" name="email" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3' style={{width: isMobile ? '100%' : '300px'}} />
+              </div>
+              <div className='lg:flex lg:justify-center'>
+                  <textarea placeholder='Message' type="text" name="message" className='h-32 pt-2 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3' style={{width: isMobile ? '100%' : '612px'}} />
+              </div>
+              <div className='lg:flex lg:justify-center mt-5'>
+                  <button
+                      type='submit'
+                      variant='primary-secondary'
+                      className='bg-bot-blue text-xl hover:bg-dark-bot-blue h-14 w-64 rounded-md px-3 lg:mr-3 py-2'
+                      style={{color: 'white', width: isMobile ? '100%' : '612px'}}
+                  >
+                      Send message
+                  </button>
+              </div>
+          </form>
         </div>
 
       </div>
