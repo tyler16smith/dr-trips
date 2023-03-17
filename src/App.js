@@ -186,7 +186,7 @@ export default function AgentLandingPage() {
 
           <div className='py-3 mx-2 mb-12'>
             <div className='flex justify-center'>
-              <iframe style={{ width: '800px', height: isMobile ? '300px' : '800px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/fMpi1JTHd6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style={{ width: '800px', height: isMobile ? '300px' : '800px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/23FRB6Em4-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
 
@@ -196,7 +196,7 @@ export default function AgentLandingPage() {
           <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 lg:py-32 pt-28 mx-3'>
             <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
               <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Our <span className='text-[#378805]'>Mission</span></p>
-              <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>Teach the rising generation proper cirriculum by supplementing their education in health, spanish, english, math, science, music, and computers.</p>
+              <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>Teach the rising generation proper curriculum by supplementing their education in health, spanish, english, math, science, music, and computers.</p>
             </div>
             <div className={isMobile ? 'my-5' : ''}>
               <img src={kids} alt="stop_switching" className='rounded-xl' style={{width: isMobile ? '100%' : '600px'}} />
@@ -204,17 +204,17 @@ export default function AgentLandingPage() {
           </div>
         </div>
         
-        <div className='flex justify-center gap-10'>
+        <div className='flex justify-center gap-20'>
           <img src={teachers} alt="stop_switching" className={isMobile ? 'hidden' : 'rounded-xl'} style={{width: isMobile ? '100%' : '600px'}} />
           <div className='flex justify-start items-center'>
             <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 mx-3'>
               <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
                 <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Trip <span className='text-[#378805]'>Overview</span></p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>&#x2022; 2-16 weeks</p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; $250/week</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; $250/week + $500 admin expenses</p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Teach students</p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Teach teachers</p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Build cirriculum</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Build curriculum</p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Beach trip</p>
               </div>
               <img src={teachers} alt="stop_switching" className={isMobile ? 'rounded-xl mt-5' : 'hidden'} style={{width: isMobile ? '100%' : '600px'}} />
@@ -233,10 +233,10 @@ export default function AgentLandingPage() {
                     style={{width: isMobile ? '200px' : '300px'}}
                     className='bg-[#a3eb76]-0 py-2 mt-2 bg-[#e9ffdb] font-bold lg:text-3xl text-2xl rounded-xl text-center shadow-md shadow-light-gray-3'
                   >
-                    Build cirriculum
+                    Build curriculum
                   </p>
                 </div>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>Build cirriculum in areas like health, science, math, music, english, spanish, business, and technology.</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>Build curriculum in areas like health, science, math, music, english, spanish, business, and technology.</p>
               </div>
             </div>
             <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
@@ -306,7 +306,7 @@ export default function AgentLandingPage() {
           <div className='lg:flex lg:justify-between lg:mr-12'>
             <div className={isMobile ? '' : 'ml-3'}>
               <p className='lg:text-4xl text-3xl text-black tracking-tight font-extrabold mb-2 text-center-mobile'>Join the crew</p>
-              <p className='font-gray text-xl text-center-mobile'>Help us develop cirriculum, teach students, and build the program.</p>
+              <p className='font-gray text-xl text-center-mobile'>Help us develop curriculum, teach students, and build the program.</p>
             </div>
             <a href="https://forms.gle/AQ4fv3vkMVr5GjL28" target="__blank" className='flex justify-center items-center hover:no-underline'>
               <button
