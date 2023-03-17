@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Accordion } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import dr_og from './assets/dr_og.jpg';
+import kids from './assets/kids.png';
+import teachers from './assets/teachers.png';
 import emailjs from 'emailjs-com';
 import AccordianContent from './AccordianContent';
 
@@ -183,11 +184,11 @@ export default function AgentLandingPage() {
             </div>
           </div>
 
-          {/* <div className='py-3 mx-2'>
+          <div className='py-3 mx-2 mb-12'>
             <div className='flex justify-center'>
-              <iframe style={{ width: '1000px', height: isMobile ? '300px' : '500px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/fLFw1Jjp01I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style={{ width: '800px', height: isMobile ? '300px' : '800px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/fMpi1JTHd6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-          </div> */}
+          </div>
 
         </div>
 
@@ -195,23 +196,28 @@ export default function AgentLandingPage() {
           <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 lg:py-32 pt-28 mx-3'>
             <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
               <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Our <span className='text-[#378805]'>Mission</span></p>
-              <p className='text-xl mt-4'>Teach the rising generation proper cirriculum by supplementing their education in health, spanish, english, math, science, music, and computers.</p>
+              <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>Teach the rising generation proper cirriculum by supplementing their education in health, spanish, english, math, science, music, and computers.</p>
             </div>
             <div className={isMobile ? 'my-5' : ''}>
-              <img src={dr_og} alt="stop_switching" className='rounded-xl' style={{width: isMobile ? '100%' : '600px'}} />
+              <img src={kids} alt="stop_switching" className='rounded-xl' style={{width: isMobile ? '100%' : '600px'}} />
             </div>
           </div>
         </div>
         
         <div className='flex justify-center gap-10'>
-          <img src={dr_og} alt="stop_switching" className={isMobile ? 'hidden' : 'rounded-xl'} style={{width: isMobile ? '100%' : '600px'}} />
+          <img src={teachers} alt="stop_switching" className={isMobile ? 'hidden' : 'rounded-xl'} style={{width: isMobile ? '100%' : '600px'}} />
           <div className='flex justify-start items-center'>
-            <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 lg:py-32 pt-20 mx-3'>
+            <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 mx-3'>
               <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
-                <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Trip <span className='text-[#378805]'>Details</span></p>
-                <p className='text-xl mt-4'>Trip details go here...</p>
+                <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Trip <span className='text-[#378805]'>Overview</span></p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>&#x2022; 2-16 weeks</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; $250/week</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Teach students</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Teach teachers</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Build cirriculum</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Beach trip</p>
               </div>
-              <img src={dr_og} alt="stop_switching" className={isMobile ? 'rounded-xl mt-5' : 'hidden'} style={{width: isMobile ? '100%' : '600px'}} />
+              <img src={teachers} alt="stop_switching" className={isMobile ? 'rounded-xl mt-5' : 'hidden'} style={{width: isMobile ? '100%' : '600px'}} />
             </div>
           </div>
         </div>
@@ -230,7 +236,7 @@ export default function AgentLandingPage() {
                     Build cirriculum
                   </p>
                 </div>
-                <p className='ml-2 text-xl mt-3 lg:w-96 leading-8'>Build cirriculum in areas like health, science, math, music, english, spanish, business, and technology.</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>Build cirriculum in areas like health, science, math, music, english, spanish, business, and technology.</p>
               </div>
             </div>
             <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
@@ -244,7 +250,7 @@ export default function AgentLandingPage() {
                     Teach students
                   </p>
                 </div>
-                <p className='ml-2 text-xl mt-3 lg:w-96 leading-8'>Help teach students throughout your stay in the DR</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>Help teach students throughout your stay in the DR</p>
               </div>
             </div>
           </div>
