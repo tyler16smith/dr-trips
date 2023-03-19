@@ -164,7 +164,7 @@ export default function AgentLandingPage() {
       >
         <div className='bg-light-gray pt-3 pb-20'>
           <div className='flex justify-between items-center lg:mx-20 pt-4 mb-4'>
-            <p className='text-3xl font-extrabold tracking-tight'>🌴DR Trips</p>
+            <p className='text-3xl font-extrabold tracking-tight'>🌴Dominican Republic Service Trip</p>
             <a href="https://forms.gle/AQ4fv3vkMVr5GjL28" target="__blank" className='flex justify-center hover:no-underline'>
               <button style={{borderWidth: '1px'}} className='px-7 py-2.5 text-xl border-[#378805] font-bold text-[#378805] hover:text-[#fff] hover:bg-[#378805] font-semibold rounded-xl'>Sign up</button>
             </a>
@@ -176,7 +176,7 @@ export default function AgentLandingPage() {
                 <p className={`font-black text-center tracking-tighter leading-tight lg:mx-5 ${isMobile ? 'text-5xl' : 'text-6xl'}`}><span className='text-[#378805]'>Be</span> the change</p>
               </div>
               <div className='flex justify-center mb-5 lg:mx-5'>
-                <p className='lg:text-2xl text-xl mt-6 text-center lg:leading-10 leading-8'>We're helping 300+ students in the Dominican Republic get an education <span className='font-semibold'>and you can help us</span>.</p>
+                <p className='lg:text-2xl text-xl mt-6 text-center lg:leading-10 leading-8'>We're helping 300+ students in the Dominican Republic get an education <span className='font-semibold'>and they need your help</span>.</p>
               </div>
               <a href="https://forms.gle/AQ4fv3vkMVr5GjL28" target="__blank" className='flex justify-center mt-10 my-4 hover:no-underline'>
                 <button className='px-8 py-3 text-xl bg-[#378805] hover:bg-[#2A6804] text-white font-semibold rounded-xl'>Volunteer form</button>
@@ -196,7 +196,7 @@ export default function AgentLandingPage() {
           <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 lg:py-32 pt-28 mx-3'>
             <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
               <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Our <span className='text-[#378805]'>Mission</span></p>
-              <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>Teach the rising generation proper curriculum by supplementing their education in health, spanish, english, math, science, music, and computers.</p>
+              <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>Lift the rising generation, delivering and improving their education.</p>
             </div>
             <div className={isMobile ? 'my-5' : ''}>
               <img src={kids} alt="stop_switching" className='rounded-xl' style={{width: isMobile ? '100%' : '600px'}} />
@@ -210,12 +210,11 @@ export default function AgentLandingPage() {
             <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 mx-3'>
               <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
                 <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Trip <span className='text-[#378805]'>Overview</span></p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>&#x2022; 2-16 weeks</p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; $250/week + $500 admin expenses</p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Teach students</p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Teach teachers</p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Build curriculum</p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Beach trip</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>&#x2022; Link to cost</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Mentor students</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Train teachers</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Fun activities</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Empower the community</p>
               </div>
               <img src={teachers} alt="stop_switching" className={isMobile ? 'rounded-xl mt-5' : 'hidden'} style={{width: isMobile ? '100%' : '600px'}} />
             </div>
@@ -228,29 +227,71 @@ export default function AgentLandingPage() {
             <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
               <div>
                 <div className='flex justify-start items-center gap-4'>
-                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-[#378805] font-extrabold'>01</p>
+                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-[#378805] font-extrabold'>
+                    01
+                  </p>
                   <p
-                    style={{width: isMobile ? '200px' : '300px'}}
+                    style={{width: isMobile ? '200px' : '150px'}}
                     className='bg-[#a3eb76]-0 py-2 mt-2 bg-[#e9ffdb] font-bold lg:text-3xl text-2xl rounded-xl text-center shadow-md shadow-light-gray-3'
                   >
-                    Build curriculum
+                    Mentor
                   </p>
                 </div>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>Build curriculum in areas like health, science, math, music, english, spanish, business, and technology.</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>Interact with children of all ages who desire to receive an education.</p>
               </div>
             </div>
             <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
               <div>
               <div className='flex justify-start items-center gap-4'>
-                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-[#378805] font-extrabold'>02</p>
+                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-[#378805] font-extrabold'>
+                    02
+                  </p>
                   <p
-                    style={{width: isMobile ? '200px' : '300px'}}
+                    style={{width: isMobile ? '200px' : '250px'}}
                     className='bg-[#a3eb76]-0 py-2 mt-2 bg-[#e9ffdb] font-bold lg:text-3xl text-2xl rounded-xl text-center shadow-md shadow-light-gray-3'
                   >
                     Teach students
                   </p>
                 </div>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>Help teach students throughout your stay in the DR</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>
+                  Improve and teach curriculum in areas like health, science, math, music, english, spanish, business, and technology.
+                </p>
+              </div>
+            </div>
+            <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
+              <div>
+              <div className='flex justify-start items-center gap-4'>
+                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-[#378805] font-extrabold'>
+                    03
+                  </p>
+                  <p
+                    style={{width: isMobile ? '200px' : '280px'}}
+                    className='bg-[#a3eb76]-0 py-2 mt-2 bg-[#e9ffdb] font-bold lg:text-3xl text-2xl rounded-xl text-center shadow-md shadow-light-gray-3'
+                  >
+                    Specialized focus
+                  </p>
+                </div>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>
+                  Volunteer for special programs that strengthen the locals.
+                </p>
+              </div>
+            </div>
+            <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
+              <div>
+              <div className='flex justify-start items-center gap-4'>
+                  <p className='ml-2 lg:text-5xl mt-2 text-4xl text-[#378805] font-extrabold'>
+                    04
+                  </p>
+                  <p
+                    style={{width: isMobile ? '200px' : '270px'}}
+                    className='bg-[#a3eb76]-0 py-2 mt-2 bg-[#e9ffdb] font-bold lg:text-3xl text-2xl rounded-xl text-center shadow-md shadow-light-gray-3'
+                  >
+                    Orphanage trips
+                  </p>
+                </div>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8' style={{width: isMobile ? '100%' : '500px'}}>
+                  Visits to orphanages weekly.
+                </p>
               </div>
             </div>
           </div>
