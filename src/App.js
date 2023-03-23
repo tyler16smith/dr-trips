@@ -292,11 +292,11 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* <div className='mx-2 mt-48'>
+        <div className='mx-2 mt-48'>
           <div className='flex justify-center'>
-            <iframe style={{ width: '1000px', height: isMobile ? '250px' : '600px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/23FRB6Em4-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style={{ width: '1000px', height: isMobile ? '250px' : '600px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/DMwY99VKHWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-        </div> */}
+        </div>
 
         <div id="how-it-works" className='pt-32 lg:pb-44 pb-24'>
           <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight mt-5 ${isMobile ? 'mb-16' : 'mb-32'}`}>What will I be doing?</p>
