@@ -255,7 +255,7 @@ export default function LandingPage() {
 
           <div className='py-3 mx-2 mb-12'>
             <div className='flex justify-center'>
-              <iframe style={{ width: '800px', height: isMobile ? '300px' : '800px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/23FRB6Em4-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style={{ width: '800px', height: isMobile ? '300px' : '800px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/6LjvRZXKP70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
 
