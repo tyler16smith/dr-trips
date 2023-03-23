@@ -474,8 +474,8 @@ export default function LandingPage() {
             <form className='text-center p-5' onSubmit={sendEmail}>
               <p className={`text-center lg:text-5xl text-4xl font-extrabold tracking-tight`}>Got questions?</p>
               <div className='lg:flex lg:justify-center mt-8 mx-2'>
-                  <input placeholder='Name' name="name" type="text" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3' style={{width: isMobile ? '100%' : '300px'}} />
-                  <input placeholder='Email' type="text" name="email" className='h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3' style={{width: isMobile ? '100%' : '300px'}} />
+                  <input placeholder='Name' name="name" type="text" className={`h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3 ${isMobile ? '-ml-2' : ''}`} style={{width: isMobile ? '105%' : '300px'}} />
+                  <input placeholder='Email' type="text" name="email" className={`h-14 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3 ${isMobile ? '-ml-2' : ''}`} style={{width: isMobile ? '105%' : '300px'}} />
               </div>
               <div className='lg:flex lg:justify-center'>
                   <textarea placeholder='Message' type="text" name="message" className='h-32 pt-2 rounded-md border-light-gray-3 border-2 px-3 mt-3 lg:mr-3 md:mr-3' style={{width: isMobile ? '100%' : '612px'}} />
