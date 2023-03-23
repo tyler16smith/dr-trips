@@ -376,7 +376,7 @@ export default function LandingPage() {
 
         <div id="dates-cost-estimate" className='pb-28'>
           <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight my-5 mx-3`}>Dates & Cost Estimator</p>
-          <div className='flex justify-center items-center gap-10 pt-12 pb-20'>
+          <div className='lg:flex lg:justify-center lg:items-center lg:gap-10 pt-12 pb-20'>
             <div className='flex flex-col justify-center items-center'>
               <p className='text-center text-3xl font-semibold'>Length</p>
               <p
@@ -401,7 +401,7 @@ export default function LandingPage() {
                 ))}
               </Menu>
             </div>
-            <span className='text-4xl'>➡️</span>
+            <span className={isMobile ? 'my-5 flex justify-center text-4xl' : 'text-4xl'}>➡️</span>
             <div className='flex flex-col justify-center items-center'>
               <p className='text-center text-3xl font-semibold'>Dates</p>
               <p
@@ -428,7 +428,7 @@ export default function LandingPage() {
                 })}
               </Menu>
             </div>
-            <span className='text-4xl'>➡️</span>
+            <span className={isMobile ? 'my-5 flex justify-center text-4xl' : 'text-4xl'}>➡️</span>
             <div className='flex flex-col justify-center items-center -mb-12'>
               <p className='text-center text-3xl font-semibold'>Cost range</p>
               <p
