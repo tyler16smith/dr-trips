@@ -6,10 +6,52 @@ import kids from './assets/kids.png';
 import teachers from './assets/teachers.png';
 import emailjs from 'emailjs-com';
 import AccordianContent from './AccordianContent';
+import { Menu, MenuItem } from "@mui/material";
 
-export default function AgentLandingPage() {
+export default function LandingPage() {
 
+  const datesCost = {
+    "length": {
+      "2": {
+        "cost": '$850 - $1,550',
+        "dates": ['May 3 - May 20',	'May 17 - Jun 3',	'May 31 - Jun 17',	'Jun 14 - Jul 1',	'Jun 28 - Jul 15',	'Jul 12 - Jul 29',	'Jul 26 - Aug 12',	'Aug 9 - Aug 26']
+      },
+      "4": {
+        "cost": '$1,082 - $1,898',
+        "dates": ['May 3 - Jun 3',	'May 17 - Jun 17',	'May 31 -  Jul 1',	'Jun 14 - Jul 15',	'Jun 28 - Jul 29',	'Jul 12 - Aug 12',	'Jul 26 - Aug 26']
+      },
+      "6": {
+        "cost": '$1,398 - $2,422',
+        "dates": ['May 3 - Jun 17',	'May 17 - Jul 1',	'May 31 - Jul 15',	'Jun 14 - Jul 29',	'Jun 28 - Aug 12',	'Jul 12 - Aug 26']
+      },
+      "8": {
+        "cost": '$1,714 - $2,646',
+        "dates": ['May 3 - Jul 1',	'May 17 - Jul 15',	'May 31 - Jul 29',	'Jun 14 - Aug 12',	'Jun 28 - Aug 26']
+      },
+      "10": {
+        "cost": '$2,030 - $3,170',
+        "dates": ['May 3 - Jul 15', 'May 17 - Jul 29', 'May 31 - Aug 12', 'Jun 14 - Aug 26']
+      },
+      "12": {
+        "cost": '$2,346 - $3,394',
+        "dates": ['May 3 - Jul 29',	'May 17 - Aug 12',	'May 31 - Aug 26']
+      },
+      "14": {
+        "cost": '$2,662 - $3,918',
+        "dates": ['May 3 - Aug 12',	'May 17 - Aug 26']
+      },
+      "16": {
+        "cost": '$2,979 - $4,142',
+        "dates": ['May 3 - Aug 12']
+      },
+    }
+  };
+  
   const [showMore, setShowMore] = useState(false);
+  const [length, setLength] = useState('2');
+  const [dateSelected, setDateSelected] = useState(datesCost.length[`${length}`].dates[0]);
+  const [dates, setDates] = useState(datesCost.length[`${length}`].dates);
+  const [cost, setCost] = useState(datesCost.length[`${length}`].cost);
   
   const notifyMessageSent = (msg) => toast.success(<p>{msg}</p>, {
     toastId: 'messageSent',
@@ -129,6 +171,7 @@ export default function AgentLandingPage() {
       "thisKey": "21"
     }
   ]
+
   
   // if mobile
   const [width, setWidth] = useState(window.innerWidth);
@@ -150,7 +193,33 @@ export default function AgentLandingPage() {
     notifyMessageSent("Message sent successfully.");
   }
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorElDates, setAnchorElDates] = useState(null);
+  const open = Boolean(anchorEl);
+  const openDates = Boolean(anchorElDates);
 
+  const handleCloseLength = (value) => {
+    setAnchorEl(null);
+    setLength(value);
+    setDates(datesCost.length[value].dates);
+    setDateSelected(datesCost.length[value].dates[0]);
+    setCost(datesCost.length[value].cost);
+  };
+  
+  const handleCloseDates = (value) => {
+    setAnchorElDates(null);
+    setDateSelected(value);
+  };
+
+  const handleClickLength = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  
+  const handleClickDates = (event) => {
+    setAnchorElDates(event.currentTarget);
+  };
+
+  
   return (
     <div>
       <ToastContainer />
@@ -163,9 +232,9 @@ export default function AgentLandingPage() {
         // }}
       >
         <div className='bg-light-gray pt-3 pb-20'>
-          <div className='flex justify-between items-center lg:mx-20 pt-4 mb-4'>
-            <p className='text-3xl font-extrabold tracking-tight'>🌴Dominican Republic Service Trip</p>
-            <a href="https://forms.gle/AQ4fv3vkMVr5GjL28" target="__blank" className='flex justify-center hover:no-underline'>
+          <div className='flex lg:justify-between justify-center items-center lg:mx-20 pt-4 mb-4'>
+            <p className='lg:text-3xl text-xl font-extrabold tracking-tight'>🌴Dominican Republic Service Trip</p>
+            <a href="https://forms.gle/AQ4fv3vkMVr5GjL28" target="__blank" className={isMobile ? 'hidden' : 'flex justify-center hover:no-underline'}>
               <button style={{borderWidth: '1px'}} className='px-7 py-2.5 text-xl border-[#378805] font-bold text-[#378805] hover:text-[#fff] hover:bg-[#378805] font-semibold rounded-xl'>Sign up</button>
             </a>
           </div>
@@ -196,7 +265,7 @@ export default function AgentLandingPage() {
           <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 lg:py-32 pt-28 mx-3'>
             <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
               <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Our <span className='text-[#378805]'>Mission</span></p>
-              <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>Lift the rising generation, delivering and improving their education.</p>
+              <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>Lift the rising generation by delivering and improving their education.</p>
             </div>
             <div className={isMobile ? 'my-5' : ''}>
               <img src={kids} alt="stop_switching" className='rounded-xl' style={{width: isMobile ? '100%' : '600px'}} />
@@ -210,9 +279,11 @@ export default function AgentLandingPage() {
             <div className='lg:flex lg:justify-center lg:items-center lg:gap-20 mx-3'>
               <div className={isMobile ? 'mt-5' : ''} style={{width: isMobile ? '100%' : '500px'}}>
                 <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} font-extrabold tracking-tight`}>Trip <span className='text-[#378805]'>Overview</span></p>
-                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>&#x2022; Link to cost</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-4'>&#x2022; 2-16 weeks</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; <a href="#dates-cost-estimate" className='text-black hover:text-black underline hover:underline'>Cost estimates below</a></p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Mentor students</p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Train teachers</p>
+                <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Build cirricullum</p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Fun activities</p>
                 <p className='lg:text-2xl text-xl mt-6 lg:leading-10 leading-8 mt-0.5'>&#x2022; Empower the community</p>
               </div>
@@ -221,7 +292,13 @@ export default function AgentLandingPage() {
           </div>
         </div>
 
-        <div id="how-it-works" className='pt-24 lg:pb-44 pb-24'>
+        {/* <div className='mx-2 mt-48'>
+          <div className='flex justify-center'>
+            <iframe style={{ width: '1000px', height: isMobile ? '250px' : '600px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/23FRB6Em4-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div> */}
+
+        <div id="how-it-works" className='pt-32 lg:pb-44 pb-24'>
           <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight mt-5 ${isMobile ? 'mb-16' : 'mb-32'}`}>What will I be doing?</p>
           <div className={isMobile ? 'mx-5' : ''}>
             <div className={`lg:flex lg:justify-center lg:items-center lg:gap-32 mt-16`}>
@@ -297,6 +374,82 @@ export default function AgentLandingPage() {
           </div>
         </div>
 
+        <div id="dates-cost-estimate" className='pb-28'>
+          <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight my-5 mx-3`}>Dates & Cost Estimator</p>
+          <div className='flex justify-center items-center gap-10 pt-12 pb-20'>
+            <div className='flex flex-col justify-center items-center'>
+              <p className='text-center text-3xl font-semibold'>Length</p>
+              <p
+                id="demo-positioned-button"
+                aria-haspopup="true"
+                onClick={handleClickLength}
+                style={{marginTop: '22px', paddingTop: isMobile ? '8px' : '4px', paddingBottom: isMobile ? '8px' : '4px'}}
+                className={`${isMobile ? 'text-base' : 'text-xl'} px-3 shadow-md shadow-gray rounded bg-[#FFFFFF] hover:bg-light-gray cursor-pointer border-black text-black font-semi-bold`}
+              >
+                <span id='step-three' style={{fontSize: '16px'}}>
+                  <span className={`text-2xl mr-2`}>{length} weeks</span>
+                </span>
+              </p>
+              <Menu
+                id="demo-positioned-menu"
+                anchorEl={anchorEl}
+                open={open}
+                className='mt-1.5 ml-1.5'
+              >
+                {Object.keys(datesCost.length).map((key) => (
+                  <MenuItem key={`length-key-${key}`} sx={{fontSize: '16px', width: '150px'}} onClick={() => handleCloseLength(key)}>{key} weeks</MenuItem>
+                ))}
+              </Menu>
+            </div>
+            <span className='text-4xl'>➡️</span>
+            <div className='flex flex-col justify-center items-center'>
+              <p className='text-center text-3xl font-semibold'>Dates</p>
+              <p
+                id="demo-positioned-button"
+                aria-haspopup="true"
+                onClick={handleClickDates}
+                style={{marginTop: '22px', paddingTop: isMobile ? '8px' : '4px', paddingBottom: isMobile ? '8px' : '4px'}}
+                className={`${isMobile ? 'text-base' : 'text-xl'} px-3 shadow-md shadow-gray rounded bg-[#FFFFFF] hover:bg-light-gray cursor-pointer border-black text-black font-semi-bold`}
+              >
+                <span id='step-three' style={{fontSize: '16px'}}>
+                  <span className={`text-2xl mr-2`}>{dateSelected}</span>
+                </span>
+              </p>
+              <Menu
+                id="demo-positioned-menu"
+                anchorEl={anchorElDates}
+                open={openDates}
+                className='mt-1.5 ml-1.5'
+              >
+                {dates.map(function (value) {
+                  return (
+                    <MenuItem key={`length-key-${value}`} sx={{fontSize: '16px', width: '150px'}} onClick={() => handleCloseDates(value)}>{value}</MenuItem>
+                  )
+                })}
+              </Menu>
+            </div>
+            <span className='text-4xl'>➡️</span>
+            <div className='flex flex-col justify-center items-center -mb-12'>
+              <p className='text-center text-3xl font-semibold'>Cost range</p>
+              <p
+                style={{marginTop: '22px', paddingTop: isMobile ? '8px' : '4px', paddingBottom: isMobile ? '8px' : '4px'}}
+                className={`${isMobile ? 'text-base' : 'text-xl'} px-3 bg-[#FFFFFF] text-black font-semi-bold`}
+              >
+                <span style={{fontSize: '16px'}}>
+                  <span className={`text-2xl mr-2`}>{cost}</span>
+                </span>
+              </p>
+              <a
+                target="__blank"
+                className='text-[#378805] text-sm underline pt-4 hover:text-[#2A6804]'
+                href="https://docs.google.com/spreadsheets/d/1XvVbTKTn0CQBQDg2g6xlLp0LfQDmtQVRLeNmUSYvvn8/edit?usp=sharing"
+              >
+                How do we calculate the cost?
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div id="how-it-works" className='pb-20'>
           <p className={`text-center lg:text-4xl text-3xl font-extrabold tracking-tight my-5 mx-3`}>Frequently Asked Questions</p>
           <Accordion className='flex flex-col gap-4 justify-center items-center'>
@@ -364,9 +517,9 @@ export default function AgentLandingPage() {
       {/* Footer */}
       <hr className='border-light-gray-4' />
       <div className='flex flex-col justify-center items-center text-center py-20 bg-light-gray'>
-        <p className='text-3xl font-extrabold tracking-tight -ml-4'>🌴DR Trips</p>
+        <p className='text-3xl font-extrabold tracking-tight -ml-4'>🌴Dominican Republic Service Trips</p>
         <div className='flex justify-center mx-2 pb-3 text-light-gray-4 mt-3'>
-          <p>© 2023 DR Trips. All rights reserved.</p>
+          <p>© 2023 DR Service Trips. All rights reserved.</p>
         </div>
       </div>
 
