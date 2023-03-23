@@ -517,7 +517,7 @@ export default function LandingPage() {
       {/* Footer */}
       <hr className='border-light-gray-4' />
       <div className='flex flex-col justify-center items-center text-center py-20 bg-light-gray'>
-        <p className='text-3xl font-extrabold tracking-tight -ml-4'>🌴Dominican Republic Service Trips</p>
+        <p className='text-3xl font-extrabold tracking-tight lg:-ml-4 mx-2'>🌴Dominican Republic Service Trips</p>
         <div className='flex justify-center mx-2 pb-3 text-light-gray-4 mt-3'>
           <p>© 2023 DR Service Trips. All rights reserved.</p>
         </div>
