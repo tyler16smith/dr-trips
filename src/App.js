@@ -8,7 +8,7 @@ import emailjs from 'emailjs-com';
 import AccordianContent from './AccordianContent';
 import { Menu, MenuItem } from "@mui/material";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function LandingPage() {
 
@@ -417,7 +417,9 @@ export default function LandingPage() {
                 ))}
               </Menu>
             </div>
-            <span className={isMobile ? 'my-5 flex justify-center text-4xl' : 'text-4xl'}>➡️</span>
+            <span className={isMobile ? 'my-5 flex justify-center text-3xl' : 'text-3xl'}>
+              <FontAwesomeIcon icon={isMobile ? faArrowDown : faArrowRight} className='p-3 rounded-xl bg-light-gray' />
+            </span>
             <div className='flex flex-col justify-center items-center'>
               <p className='text-center text-3xl font-semibold'>Dates</p>
               <p
@@ -444,7 +446,9 @@ export default function LandingPage() {
                 })}
               </Menu>
             </div>
-            <span className={isMobile ? 'my-5 flex justify-center text-4xl' : 'text-4xl'}>➡️</span>
+            <span className={isMobile ? 'my-5 flex justify-center text-3xl' : 'text-3xl'}>
+              <FontAwesomeIcon icon={isMobile ? faArrowDown : faArrowRight} className='p-3 rounded-xl bg-light-gray' />
+            </span>
             <div className='flex flex-col justify-center items-center -mb-12'>
               <p className='text-center text-3xl font-semibold'>Cost range</p>
               <p
