@@ -496,13 +496,13 @@ export default function LandingPage() {
           <div className='lg:flex lg:justify-center lg:items-center lg:gap-3'>
             <FontAwesomeIcon icon={faArrowLeft} onClick={() => handleTestimonial(false)} className={isMobile ? 'hidden' : 'text-4xl px-3 py-5 rounded-xl cursor-pointer bg-light-gray hover:bg-light-gray-2'} />
             <div>
-              <div className={testimonial === 3 ? 'flex justify-center' : 'hidden'}>
+              <div className={testimonial === 1 ? 'flex justify-center' : 'hidden'}>
                 <iframe style={{ width: '900px', height: isMobile ? '224px' : '494px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/38eVwuzq9mM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div className={testimonial === 2 ? 'flex justify-center' : 'hidden'}>
                 <iframe style={{ width: '900px', height: isMobile ? '224px' : '494px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/xdmEIpduM9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
-              <div className={testimonial === 1 ? 'flex justify-center' : 'hidden'}>
+              <div className={testimonial === 3 ? 'flex justify-center' : 'hidden'}>
                 <iframe style={{ width: '900px', height: isMobile ? '224px' : '494px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/9VTQvGMVezA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
