@@ -20,7 +20,7 @@ export default function AccordianContent(props) {
     return (
         <Accordion.Item eventKey={thisKey}>
             <Accordion.Header>
-            <p className='bg-light-gray py-3 rounded-xl text-xl font-semibold' style={{width: isMobile ? '300px' : '700px'}}>{header}</p>
+                <p className='bg-light-gray py-3 rounded-xl text-xl font-semibold' style={{width: isMobile ? '300px' : '700px'}}>{header}</p>
             </Accordion.Header>
             <Accordion.Body className='flex justify-center items-center text-xl bg-light-gray py-3 rounded-b-xl -mt-3'>
                 <p className='px-3' style={{width: isMobile ? '300px' : '700px'}}>{content}</p>
