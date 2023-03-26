@@ -310,7 +310,7 @@ export default function LandingPage() {
         <div className='mx-2 lg:mt-48 mt-36'>
           <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} text-center font-extrabold tracking-tight mb-5`}>Here's our <span className='text-[#378805]'>why</span></p>
           <div className='flex justify-center'>
-            <iframe style={{ width: '1000px', height: isMobile ? '250px' : '600px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/DMwY99VKHWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe style={{ width: '1000px', height: isMobile ? '250px' : '600px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/S8JNAwBzroE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
 
