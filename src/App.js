@@ -8,7 +8,7 @@ import emailjs from 'emailjs-com';
 import AccordianContent from './AccordianContent';
 import { Menu, MenuItem } from "@mui/material";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faArrowLeft, faArrowRight, faCopy } from '@fortawesome/free-solid-svg-icons';
 
 export default function LandingPage() {
 
@@ -234,6 +234,11 @@ export default function LandingPage() {
     }
   }
 
+  const copyLink = (link) => {
+    navigator.clipboard.writeText(link);
+    notifyMessageSent('Link copied!')
+  }
+
   
   return (
     <div>
@@ -311,6 +316,33 @@ export default function LandingPage() {
           <p className={`${isMobile ? 'text-4xl' : 'text-5xl'} text-center font-extrabold tracking-tight mb-5`}>Here's our <span className='text-[#378805]'>why</span></p>
           <div className='flex justify-center'>
             <iframe style={{ width: '1000px', height: isMobile ? '250px' : '600px' }} className='rounded-xl lg:shadow-xl shadow-gray cursor-pointer' src="https://www.youtube.com/embed/S8JNAwBzroE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        
+        <div className='mx-2 lg:mt-48 mt-36 lg:mb-20 mb-14'>
+          <p className={`${isMobile ? 'text-3xl' : 'text-4xl'} text-center font-extrabold tracking-tight mb-5`}>Want to know <span className='text-[#378805]'>more?</span></p>
+          <div className='flex flex-col justify-center items-center text-xl lg:leading-10 leading-9'>
+            <p className={isMobile ? 'px-4' : 'lg:w-[700px]'}>We hold bi-monthly informational meetings where you can learn more and ask questions. Click or copy the link below to join the meeting on the following dates:</p>
+            <div className={`flex flex-col justify-center items-center mt-4 ${isMobile ? 'px-4' : 'lg:w-[700px]'}`}>
+              <p>Sat, Apr 29, 2023: 10-10:30 AM MST</p>
+              <p>Sat, May 13, 2023: 10-10:30 AM MST</p>
+              <p>Sat, May 27, 2023: 10-10:30 AM MST</p>
+            </div>
+            <a
+              target='__blank'
+              href='https://meet.google.com/joy-onya-xsa'
+              className='px-5 py-3 text-white font-bold text-xl rounded-xl bg-[#378805] hover:bg-[#2A6804] hover:no-underline mt-5 mb-3'
+            >
+              Join the meeting
+            </a>
+            <div className='flex justify-center items-center gap-3 text-base'>
+              <p>https://meet.google.com/joy-onya-xsa</p>
+              <FontAwesomeIcon
+                icon={faCopy}
+                className='cursor-pointer text-dark-gray hover:text-black'
+                onClick={() => copyLink('https://meet.google.com/joy-onya-xsa')}
+              />
+            </div>
           </div>
         </div>
 
