@@ -323,7 +323,7 @@ export default function LandingPage() {
           <p className={`${isMobile ? 'text-3xl' : 'text-4xl'} text-center font-extrabold tracking-tight mb-5`}>Want to know <span className='text-[#378805]'>more?</span></p>
           <div className='flex flex-col justify-center items-center text-xl lg:leading-10 leading-9'>
             <p className={isMobile ? 'px-4' : 'lg:w-[700px]'}>We hold bi-monthly informational meetings where you can learn more and ask questions. Click or copy the link below to join the meeting on the following dates:</p>
-            <div className={`flex flex-col justify-center items-center mt-4 ${isMobile ? 'px-4' : 'lg:w-[700px]'}`}>
+            <div className={`flex flex-col justify-center items-center text-lg mt-4 ${isMobile ? 'px-4' : 'lg:w-[700px]'}`}>
               <p>Sat, Apr 29, 2023: 10-10:30 AM MST</p>
               <p>Sat, May 13, 2023: 10-10:30 AM MST</p>
               <p>Sat, May 27, 2023: 10-10:30 AM MST</p>
