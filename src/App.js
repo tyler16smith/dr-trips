@@ -16,36 +16,20 @@ export default function LandingPage() {
     "length": {
       "2": {
         "cost": '$850 - $1,550',
-        "dates": ['May 3 - May 20',	'May 17 - Jun 3',	'May 31 - Jun 17',	'Jun 14 - Jul 1',	'Jun 28 - Jul 15',	'Jul 12 - Jul 29',	'Jul 26 - Aug 12',	'Aug 9 - Aug 26']
+        "dates": ['May 31 - Jun 17',	'Jun 14 - Jul 1',	'Jun 28 - Jul 15',	'Jul 12 - Jul 29']
       },
       "4": {
         "cost": '$1,082 - $1,898',
-        "dates": ['May 3 - Jun 3',	'May 17 - Jun 17',	'May 31 -  Jul 1',	'Jun 14 - Jul 15',	'Jun 28 - Jul 29',	'Jul 12 - Aug 12',	'Jul 26 - Aug 26']
+        "dates": ['May 31 -  Jul 1',	'Jun 14 - Jul 15',	'Jun 28 - Jul 29']
       },
       "6": {
         "cost": '$1,398 - $2,422',
-        "dates": ['May 3 - Jun 17',	'May 17 - Jul 1',	'May 31 - Jul 15',	'Jun 14 - Jul 29',	'Jun 28 - Aug 12',	'Jul 12 - Aug 26']
+        "dates": ['May 31 - Jul 15',	'Jun 14 - Jul 29']
       },
       "8": {
         "cost": '$1,714 - $2,646',
-        "dates": ['May 3 - Jul 1',	'May 17 - Jul 15',	'May 31 - Jul 29',	'Jun 14 - Aug 12',	'Jun 28 - Aug 26']
-      },
-      "10": {
-        "cost": '$2,030 - $3,170',
-        "dates": ['May 3 - Jul 15', 'May 17 - Jul 29', 'May 31 - Aug 12', 'Jun 14 - Aug 26']
-      },
-      "12": {
-        "cost": '$2,346 - $3,394',
-        "dates": ['May 3 - Jul 29',	'May 17 - Aug 12',	'May 31 - Aug 26']
-      },
-      "14": {
-        "cost": '$2,662 - $3,918',
-        "dates": ['May 3 - Aug 12',	'May 17 - Aug 26']
-      },
-      "16": {
-        "cost": '$2,979 - $4,142',
-        "dates": ['May 3 - Aug 12']
-      },
+        "dates": ['May 31 - Jul 29']
+      }
     }
   };
   
@@ -323,7 +307,7 @@ export default function LandingPage() {
           <p className={`${isMobile ? 'text-3xl' : 'text-4xl'} text-center font-extrabold tracking-tight mb-5`}>Want to know <span className='text-[#378805]'>more?</span></p>
           <div className='flex flex-col justify-center items-center text-xl lg:leading-10 leading-9'>
             <p className={isMobile ? 'px-4' : 'lg:w-[700px]'}>We hold bi-monthly informational meetings where you can learn more and ask questions. Click or copy the link below to join the meeting on the following dates:</p>
-            <div className={`flex flex-col justify-center items-center text-lg mt-4 ${isMobile ? 'px-4' : 'lg:w-[700px]'}`}>
+            <div className={`flex flex-col justify-center items-center mt-4 ${isMobile ? 'px-4 text-lg' : 'text-xl leading-10 lg:w-[700px]'}`}>
               <p>Sat, Apr 29, 2023: 10-10:30 AM MST</p>
               <p>Sat, May 13, 2023: 10-10:30 AM MST</p>
               <p>Sat, May 27, 2023: 10-10:30 AM MST</p>
@@ -335,7 +319,7 @@ export default function LandingPage() {
             >
               Join the meeting
             </a>
-            <div className='flex justify-center items-center gap-3 text-base'>
+            <div className='flex justify-center items-center gap-3 text-base text-[#378805]'>
               <p>https://meet.google.com/joy-onya-xsa</p>
               <FontAwesomeIcon
                 icon={faCopy}
